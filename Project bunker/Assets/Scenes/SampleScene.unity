@@ -399,7 +399,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: feac27b54c79c0f4ab6718f5fe5008b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  autorizationPanel: {fileID: 3866034105558163704, guid: 46e69a6459f298a4ea93373f8a23ba47, type: 3}
+  authorizationPanel: {fileID: 3866034105558163704, guid: 46e69a6459f298a4ea93373f8a23ba47, type: 3}
+  menuPanel: {fileID: 3866034105558163704, guid: 21b267464566bf146ae5ce898de3eb02, type: 3}
 --- !u!4 &1336024837
 Transform:
   m_ObjectHideFlags: 0

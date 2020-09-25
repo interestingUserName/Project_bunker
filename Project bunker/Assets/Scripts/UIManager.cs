@@ -9,36 +9,40 @@ public class UIManager : MonoBehaviour
     public static UIManager getInstance()
     {
         if (instance == null)
-            instance = new UIManager();
+            instance = GameObject.Find("UI Manager").GetComponent<UIManager>();
         return instance;
     }
 
     [SerializeField]
-    private Dictionary<string, GameObject> Panels = new Dictionary<string, GameObject>();
-    private GameObject currentPanel;
+    private Dictionary<string, GameObject> panels;
     [SerializeField]
-    private GameObject autorizationPanel;
+    private GameObject authorizationPanel;
+    [SerializeField]
+    private GameObject menuPanel;
+
+    private GameObject currentPanel;
 
     private void Start()
     {
+        panels = new Dictionary<string, GameObject>();
         InitializePanels();
-        Open("Autorization");
+        Open("Authorization");
     }
 
     private void InitializePanels()
     {
-        Panels.Add("Autorization", autorizationPanel);
-    }
-
-    public void Open(string panelName)
-    {
-        CloseCurrentPanel();
-        Panels.TryGetValue(panelName, out GameObject panel);
-        currentPanel = Instantiate(panel, GameObject.Find("Canvas").transform);
+        panels.Add("Authorization", authorizationPanel);
+        panels.Add("Menu", menuPanel);
     }
 
     private void CloseCurrentPanel()
     {
         Destroy(currentPanel);
+    }
+    public void Open(string panelName)
+    {
+        CloseCurrentPanel();
+        panels.TryGetValue(panelName, out GameObject panel);
+        currentPanel = Instantiate(panel, GameObject.Find("Canvas").transform);
     }
 }
