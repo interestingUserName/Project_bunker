@@ -19,6 +19,10 @@ public class UIManager : MonoBehaviour
     private GameObject authorizationPanel;
     [SerializeField]
     private GameObject menuPanel;
+    [SerializeField]
+    private GameObject privateGamePanel;
+    [SerializeField]
+    private GameObject infoPanel;
 
     private GameObject currentPanel;
 
@@ -33,6 +37,8 @@ public class UIManager : MonoBehaviour
     {
         panels.Add("Authorization", authorizationPanel);
         panels.Add("Menu", menuPanel);
+        panels.Add("Private game", privateGamePanel);
+        panels.Add("Info", infoPanel);
     }
 
     private void CloseCurrentPanel()
