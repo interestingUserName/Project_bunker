@@ -45,10 +45,10 @@ public class UIManager : MonoBehaviour
     {
         Destroy(currentPanel);
     }
-    public void Open(string panelName)
+    public void Open(string _panelName)
     {
         CloseCurrentPanel();
-        panels.TryGetValue(panelName, out GameObject panel);
+        panels.TryGetValue(_panelName, out GameObject panel);
         currentPanel = Instantiate(panel, GameObject.Find("Canvas").transform);
     }
 }
