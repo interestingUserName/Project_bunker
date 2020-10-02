@@ -403,6 +403,7 @@ MonoBehaviour:
   menuPanel: {fileID: 3866034105558163704, guid: 21b267464566bf146ae5ce898de3eb02, type: 3}
   privateGamePanel: {fileID: 3866034105558163704, guid: bb3aa5565ecd28f40b4e8a2de8cc601e, type: 3}
   infoPanel: {fileID: 3866034105558163704, guid: a0dd1d7bda0a2c94abc333378d9bfc3d, type: 3}
+  lobbyPanel: {fileID: 3866034105558163704, guid: 8bca0a73851a2234ebb4d759f773ac9d, type: 3}
 --- !u!4 &1336024837
 Transform:
   m_ObjectHideFlags: 0

@@ -1,8 +1,12 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
-    - Photon.Pun.Demo.Asteroids.LobbyManager
+    - AuthorizationManager
+    - CountSlider
+    - LobbyManager
+    - MenuNetworkManager
     - RoomButton
+    - RoomNetworkManager
     - UIManager
     - UIManagerPointer
     PhotonUnityNetworking.Demos.dll:
@@ -32,6 +36,7 @@ ScriptsOnlyBuild:
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
     - UnityEngine.EventSystems.StandaloneInputModule
+    - UnityEngine.UI.AspectRatioFitter
     - UnityEngine.UI.Button
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.ContentSizeFitter
@@ -91,9 +96,9 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11802}
     - Class: 114
-      Script: {instanceID: 11804}
+      Script: {instanceID: 11828}
     - Class: 114
-      Script: {instanceID: 11830}
+      Script: {instanceID: 11954}
     - Class: 114
       Script: {instanceID: 11992}
     - Class: 114
@@ -103,53 +108,63 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12094}
     - Class: 114
-      Script: {instanceID: 12216}
+      Script: {instanceID: 12214}
     - Class: 114
-      Script: {instanceID: 12252}
+      Script: {instanceID: 12218}
     - Class: 114
-      Script: {instanceID: 12492}
+      Script: {instanceID: 12254}
+    - Class: 114
+      Script: {instanceID: 12334}
+    - Class: 114
+      Script: {instanceID: 12494}
     - Class: 114
       Script: {instanceID: 12610}
     - Class: 114
-      Script: {instanceID: 12694}
+      Script: {instanceID: 12614}
     - Class: 114
-      Script: {instanceID: 12762}
+      Script: {instanceID: 12698}
     - Class: 114
-      Script: {instanceID: 12870}
+      Script: {instanceID: 12766}
     - Class: 114
-      Script: {instanceID: 12938}
+      Script: {instanceID: 12874}
     - Class: 114
-      Script: {instanceID: 12952}
+      Script: {instanceID: 12942}
     - Class: 114
-      Script: {instanceID: 13014}
+      Script: {instanceID: 12956}
     - Class: 114
-      Script: {instanceID: 13230}
+      Script: {instanceID: 13018}
     - Class: 114
-      Script: {instanceID: 13298}
+      Script: {instanceID: 13234}
     - Class: 114
-      Script: {instanceID: 13310}
+      Script: {instanceID: 13302}
     - Class: 114
-      Script: {instanceID: 13398}
+      Script: {instanceID: 13314}
     - Class: 114
-      Script: {instanceID: 13410}
+      Script: {instanceID: 13318}
     - Class: 114
-      Script: {instanceID: 13488}
+      Script: {instanceID: 13404}
     - Class: 114
-      Script: {instanceID: 13636}
+      Script: {instanceID: 13416}
     - Class: 114
-      Script: {instanceID: 13658}
+      Script: {instanceID: 13428}
     - Class: 114
-      Script: {instanceID: 13668}
+      Script: {instanceID: 13496}
     - Class: 114
-      Script: {instanceID: 13802}
+      Script: {instanceID: 13644}
     - Class: 114
-      Script: {instanceID: 14174}
+      Script: {instanceID: 13666}
     - Class: 114
-      Script: {instanceID: 14268}
+      Script: {instanceID: 13676}
     - Class: 114
-      Script: {instanceID: 14304}
+      Script: {instanceID: 13810}
     - Class: 114
-      Script: {instanceID: 14348}
+      Script: {instanceID: 14182}
+    - Class: 114
+      Script: {instanceID: 14276}
+    - Class: 114
+      Script: {instanceID: 14312}
+    - Class: 114
+      Script: {instanceID: 14356}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -205,12 +220,6 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: Slider
-  - hash:
-      serializedVersion: 2
-      Hash: f7bb6096199e0cf058d5d69878184cf4
-    assemblyName: UnityEngine.UI.dll
-    namespaceName: UnityEngine.UI
-    className: InputField
   - hash:
       serializedVersion: 2
       Hash: 80d2851602cb4bcb6f559596c5eb955b
@@ -301,6 +310,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ChatGui
+  - hash:
+      serializedVersion: 2
+      Hash: 1fe45a4cdc646f972484fc6b81dd65d0
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: AuthorizationManager
   - hash:
       serializedVersion: 2
       Hash: 74c875e0f15c48e0a55f06093aa93e15
@@ -445,6 +460,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: Photon.Realtime.Demo
     className: ConnectAndJoinRandomLb
+  - hash:
+      serializedVersion: 2
+      Hash: 3f38a6641fde0626bd4ad50878497593
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: RoomNetworkManager
   - hash:
       serializedVersion: 2
       Hash: 8aa3d6ccbcb54ee8db6c1229854adaaa
@@ -633,6 +654,12 @@ ScriptsOnlyBuild:
     className: PunCockpitEmbed
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: MenuNetworkManager
+  - hash:
+      serializedVersion: 2
       Hash: cc4274b586df3c02688bac01b88bd16c
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.EventSystems
@@ -699,7 +726,7 @@ ScriptsOnlyBuild:
     className: CurrentRoomPlayerTtlProperty
   - hash:
       serializedVersion: 2
-      Hash: 1368701861b33f6ddc8f2b1ee575a9fa
+      Hash: 4e7737c82e34e6ea7c417d011616ec10
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: UIManager
@@ -963,6 +990,12 @@ ScriptsOnlyBuild:
     className: PlayerUI
   - hash:
       serializedVersion: 2
+      Hash: dfd9ee0563efbcbfff8d6b5404b8c24b
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: CountSlider
+  - hash:
+      serializedVersion: 2
       Hash: e7f4e9cb5468a346609dfdb36da26dcc
     assemblyName: PhotonUnityNetworking.Demos.dll
     namespaceName: Photon.Pun.Demo.Cockpit.Forms
@@ -985,6 +1018,12 @@ ScriptsOnlyBuild:
     assemblyName: PhotonUnityNetworking.Demos.dll
     namespaceName: Photon.Pun.Demo.SlotRacer.Utils
     className: SplineWalker
+  - hash:
+      serializedVersion: 2
+      Hash: f7bb6096199e0cf058d5d69878184cf4
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: InputField
   - hash:
       serializedVersion: 2
       Hash: 908b3077da284d11de0450423ca1808e
@@ -1485,9 +1524,9 @@ ScriptsOnlyBuild:
     className: UserIdUiForm
   - hash:
       serializedVersion: 2
-      Hash: a398039491c2718a54f45aa852181dd0
+      Hash: 78fe5173b5a1b8ddd6eac665db7e6ce0
     assemblyName: Assembly-CSharp.dll
-    namespaceName: Photon.Pun.Demo.Asteroids
+    namespaceName: 
     className: LobbyManager
   - hash:
       serializedVersion: 2
