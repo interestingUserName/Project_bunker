@@ -56,9 +56,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Photon\PhotonChat\Demos\DemoChat\ChatGui.cs" />
+    <Compile Include="Assets\Scripts\AuthorizationManager.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\Common\TextToggleIsOnTransition.cs" />
     <Compile Include="Assets\Photon\PhotonRealtime\Demos\DemoLoadBalancing\ConnectAndJoinRandomLb.cs" />
+    <Compile Include="Assets\Scripts\RoomNetworkManager.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\DemoChat\NamePickGui.cs" />
+    <Compile Include="Assets\Scripts\MenuNetworkManager.cs" />
     <Compile Include="Assets\Scripts\UI\UIManager.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\Common\EventSystemSpawner.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\DemoChat\ChannelSelector.cs" />
@@ -67,31 +70,28 @@
     <Compile Include="Assets\Scripts\UI\RoomButton.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\DemoChat\AppSettingsExtensions.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\Common\TextButtonTransition.cs" />
+    <Compile Include="Assets\Scripts\UI\CountSlider.cs" />
     <Compile Include="Assets\Scripts\UI\UIManagerPointer.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\DemoChat\FriendItem.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\Common\OnStartDelete.cs" />
     <Compile Include="Assets\Scripts\LobbyManager.cs" />
-    <Compile Include="Assets\Scripts\AuthorizationManager.cs" />
-    <Compile Include="Assets\Scripts\MenuNetworkManager.cs" />
-    <Compile Include="Assets\Scripts\UI\CountSlider.cs" />
-    <Compile Include="Assets\Scripts\RoomNetworkManager.cs" />
+    <Compile Include="Assets\Imphenzia\GradientSky\Scripts\GradientSkyCamera.cs" />
+    <Compile Include="Assets\Imphenzia\GradientSky\Scripts\Common\GradientSkyCommon.cs" />
+    <Compile Include="Assets\Imphenzia\GradientSky\Scripts\GradientSkyObject.cs" />
+    <Compile Include="Assets\Scripts\UI\ButtonHighlighting.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\Photon\PhotonLibs\netstandard2.0\Photon3Unity3D.xml" />
      <None Include="Assets\Photon\PhotonUnityNetworking\changelog.txt" />
-     <None Include="Assets\ScriptTemplates\51-Mirror__Network Authenticator-NewNetworkAuthenticator.cs.txt" />
-     <None Include="Assets\ScriptTemplates\53-Mirror__Network Observer-NewNetworkObserver.cs.txt" />
-     <None Include="Assets\ScriptTemplates\56-Mirror__Network Discovery-NewNetworkDiscovery.cs.txt" />
+     <None Include="Assets\Imphenzia\GradientSky\ReadMe - GradientSky.txt" />
+     <None Include="Assets\Imphenzia\GradientSky\Shaders\VertexColorCamera.shader" />
      <None Include="Assets\Photon\PhotonLibs\changes-library.txt" />
-     <None Include="Assets\ScriptTemplates\52-Mirror__Network Behaviour-NewNetworkBehaviour.cs.txt" />
      <None Include="Assets\Photon\PhotonUnityNetworking\readme.txt" />
      <None Include="Assets\Photon\PhotonLibs\netstandard2.0\Photon3Unity3D.dll" />
+     <None Include="Assets\Imphenzia\GradientSky\Shaders\VertexColorObject.shader" />
      <None Include="Assets\Photon\PhotonLibs\Photon3Unity3D.dll" />
      <None Include="Assets\Photon\PhotonLibs\Metro\Photon3Unity3D.dll" />
-     <None Include="Assets\ScriptTemplates\55-Mirror__Network Room Player-NewNetworkRoomPlayer.cs.txt" />
      <None Include="Assets\Photon\PhotonLibs\Photon3Unity3D.xml" />
-     <None Include="Assets\ScriptTemplates\50-Mirror__Network Manager-NewNetworkManager.cs.txt" />
-     <None Include="Assets\ScriptTemplates\54-Mirror__Network Room Manager-NewNetworkRoomManager.cs.txt" />
      <None Include="Assets\Photon\PhotonUnityNetworking\link.xml" />
     <Reference Include="UnityEngine">
       <HintPath>C:\Program Files (x86)\2020.1.5f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>

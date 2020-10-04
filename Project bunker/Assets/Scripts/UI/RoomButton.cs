@@ -12,6 +12,13 @@ public class RoomButton : MonoBehaviour
     public string roomName;
     public int roomSize;
 
+    private Outline outline;
+
+    private void Start()
+    {
+        outline = GetComponent<Outline>();
+    }
+
     public void SetRoom()
     {
         nameText.text = roomName;
@@ -21,5 +28,15 @@ public class RoomButton : MonoBehaviour
     public void JoinRoomOnClick()
     {
         PhotonNetwork.JoinRoom(roomName);
+    }
+
+    void OnMouseEnter()
+    {
+        outline.enabled = true;
+    }
+
+    public void OnMouseExit()
+    {
+        outline.enabled = false;
     }
 }

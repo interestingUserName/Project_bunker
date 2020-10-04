@@ -10,6 +10,7 @@ public class LobbyManager : MonoBehaviourPunCallbacks, ILobbyCallbacks
 
     public InputField roomNameInputField;
     public Slider roomSizeSlider;
+    public GameObject goButton;
 
     public GameObject roomListingPrefab;
     public Transform roomsPanel;
@@ -57,6 +58,21 @@ public class LobbyManager : MonoBehaviourPunCallbacks, ILobbyCallbacks
 
     public void OnRoomNameChanged(string nameIn)
     {
+        if (roomNameInputField.text.Length > 12)
+        {
+            roomNameInputField.text = roomNameInputField.text.Substring(0, roomNameInputField.text.Length - 1);
+        }
+
+        nameIn = roomNameInputField.text;
+
+        if (roomNameInputField.text.Length >= 3)
+        {
+            goButton.SetActive(true);
+        }
+        else
+        {
+            goButton.SetActive(false);
+        }
         roomName = nameIn;
     }
 
