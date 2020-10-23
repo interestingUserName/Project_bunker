@@ -6,6 +6,7 @@ ScriptsOnlyBuild:
     - CountSlider
     - LobbyManager
     - MenuNetworkManager
+    - PropertyValue
     - RoomButton
     - RoomNetworkManager
     - UIManager
@@ -54,6 +55,75 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.Text
     - UnityEngine.UI.VerticalLayoutGroup
   sceneClasses:
+    Assets/Scenes/Lobby.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 61
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 11800}
+    - Class: 114
+      Script: {instanceID: 11802}
+    - Class: 114
+      Script: {instanceID: 11804}
+    - Class: 114
+      Script: {instanceID: 11806}
+    - Class: 114
+      Script: {instanceID: 11836}
+    - Class: 114
+      Script: {instanceID: 12104}
+    - Class: 114
+      Script: {instanceID: 12224}
+    - Class: 114
+      Script: {instanceID: 12264}
+    - Class: 114
+      Script: {instanceID: 12622}
+    - Class: 114
+      Script: {instanceID: 12978}
+    - Class: 114
+      Script: {instanceID: 13030}
+    - Class: 114
+      Script: {instanceID: 13314}
+    - Class: 114
+      Script: {instanceID: 13508}
+    - Class: 114
+      Script: {instanceID: 13822}
+    - Class: 114
+      Script: {instanceID: 13932}
+    - Class: 114
+      Script: {instanceID: 14198}
+    - Class: 114
+      Script: {instanceID: 14292}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
     Assets/Scenes/SampleScene.unity:
     - Class: 1
       Script: {instanceID: 0}
@@ -104,25 +174,25 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11808}
     - Class: 114
-      Script: {instanceID: 11834}
+      Script: {instanceID: 11810}
     - Class: 114
-      Script: {instanceID: 11962}
+      Script: {instanceID: 11836}
     - Class: 114
-      Script: {instanceID: 12000}
+      Script: {instanceID: 11964}
     - Class: 114
-      Script: {instanceID: 12018}
+      Script: {instanceID: 12002}
     - Class: 114
-      Script: {instanceID: 12060}
+      Script: {instanceID: 12020}
     - Class: 114
-      Script: {instanceID: 12102}
+      Script: {instanceID: 12062}
     - Class: 114
-      Script: {instanceID: 12222}
+      Script: {instanceID: 12104}
     - Class: 114
-      Script: {instanceID: 12226}
+      Script: {instanceID: 12224}
     - Class: 114
-      Script: {instanceID: 12262}
+      Script: {instanceID: 12228}
     - Class: 114
-      Script: {instanceID: 12342}
+      Script: {instanceID: 12264}
     - Class: 114
       Script: {instanceID: 12502}
     - Class: 114
@@ -166,15 +236,17 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 13822}
     - Class: 114
-      Script: {instanceID: 14194}
+      Script: {instanceID: 13932}
     - Class: 114
       Script: {instanceID: 14198}
     - Class: 114
-      Script: {instanceID: 14288}
+      Script: {instanceID: 14202}
     - Class: 114
-      Script: {instanceID: 14324}
+      Script: {instanceID: 14292}
     - Class: 114
-      Script: {instanceID: 14368}
+      Script: {instanceID: 14328}
+    - Class: 114
+      Script: {instanceID: 14372}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -224,6 +296,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: Shadow
+  - hash:
+      serializedVersion: 2
+      Hash: cf9f5cf2c3145a37ac07f00e50e460f9
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: AspectRatioFitter
   - hash:
       serializedVersion: 2
       Hash: 0c05f2bfb402def3f0a85a62a2323c7f
@@ -484,7 +562,7 @@ ScriptsOnlyBuild:
     className: ConnectAndJoinRandomLb
   - hash:
       serializedVersion: 2
-      Hash: 3f38a6641fde0626bd4ad50878497593
+      Hash: 47d03bbb4dbad8dc6b87e6a8e663c337
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: RoomNetworkManager
@@ -572,12 +650,6 @@ ScriptsOnlyBuild:
     assemblyName: PhotonUnityNetworking.Demos.dll
     namespaceName: Photon.Pun.Demo.Procedural
     className: Block
-  - hash:
-      serializedVersion: 2
-      Hash: cf9f5cf2c3145a37ac07f00e50e460f9
-    assemblyName: UnityEngine.UI.dll
-    namespaceName: UnityEngine.UI
-    className: AspectRatioFitter
   - hash:
       serializedVersion: 2
       Hash: cba6cca6bb3290c4c00d709cf63843db
@@ -1276,6 +1348,12 @@ ScriptsOnlyBuild:
     className: SupportLogger
   - hash:
       serializedVersion: 2
+      Hash: d6a42f52182aefdbf451a85cd744cf52
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PropertyValue
+  - hash:
+      serializedVersion: 2
       Hash: 3f600ad0f750f59238a91f7513b927c1
     assemblyName: PhotonUnityNetworking.dll
     namespaceName: Photon.Pun
@@ -1583,4 +1661,5 @@ ScriptsOnlyBuild:
   platform: 19
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
+  - Assets/Scenes/Lobby.unity
   playerPath: C:/Users/User/Desktop/Builds/Project bunker.exe

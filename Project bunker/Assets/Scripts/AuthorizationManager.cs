@@ -12,6 +12,14 @@ public class AuthorizationManager : MonoBehaviourPunCallbacks
     public GameObject goButton;
 
     private string playerName;
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            goButton.GetComponent<Button>().onClick.Invoke();
+        }
+    }
     public void SetPlayerName()
     {
         PhotonNetwork.NickName = playerName;

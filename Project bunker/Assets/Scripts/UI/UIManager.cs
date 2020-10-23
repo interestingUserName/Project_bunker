@@ -14,19 +14,19 @@ public class UIManager : MonoBehaviour
     }
 
     [SerializeField]
-    private Dictionary<string, GameObject> panels;
+    private Dictionary<string, GameObject> panels = new Dictionary<string, GameObject>();
     [SerializeField]
-    private GameObject authorizationPanel;
+    private GameObject authorizationPanel = null;
     [SerializeField]
-    private GameObject menuPanel;
+    private GameObject menuPanel = null;
     [SerializeField]
-    private GameObject privateGamePanel;
+    private GameObject privateGamePanel = null;
     [SerializeField]
-    private GameObject infoPanel;
+    private GameObject infoPanel = null;
     [SerializeField]
-    private GameObject lobbyPanel;
+    private GameObject lobbyPanel = null;
 
-    private GameObject currentPanel;
+    private GameObject currentPanel = null;
 
     private void Start()
     {
@@ -44,7 +44,7 @@ public class UIManager : MonoBehaviour
         panels.Add("Lobby", lobbyPanel);
     }
 
-    private void CloseCurrentPanel()
+    public void CloseCurrentPanel()
     {
         Destroy(currentPanel);
     }

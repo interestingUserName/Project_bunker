@@ -4,22 +4,16 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class RoomNetworkManager : MonoBehaviourPunCallbacks, IInRoomCallbacks
+public class RoomNetworkManager : MonoBehaviourPunCallbacks, IInRoomCallbacks, IPunObservable
 {
     public Text roomNameText;
     public Text playersCountText;
 
-    public static RoomNetworkManager room;
     private PhotonView PV;
 
-    public bool isGameLoaded;
-    public int currentScene;
+    public static RoomNetworkManager room;
 
-    Player[] photonPlayers;
-    public int playersInRoom;
-    public int myNumberInRoom;
-
-    public int playerInGame;
+    private bool isReady = false;
 
     public Transform playersPanel;
     public GameObject playerListingPrefab;
@@ -43,33 +37,29 @@ public class RoomNetworkManager : MonoBehaviourPunCallbacks, IInRoomCallbacks
 
     private void Start()
     {
-        SetRoomName();
-        UpdatePlayersCount();
+        playersPanel = GameObject.Find("Players panel").transform;
         PV = GetComponent<PhotonView>();
-
         ClearPlayerListings();
         ListPlayers();
-
-        photonPlayers = PhotonNetwork.PlayerList;
-        playersInRoom = photonPlayers.Length;
-        myNumberInRoom = playersInRoom;
     }
 
     private void Update()
     {
+        if (PhotonNetwork.IsMasterClient && Input.GetKeyDown(KeyCode.Space))
+        {
+            if (isReady)
+            {
+                isReady = false;
+            }
+            else
+            {
+                isReady = true;
+            }
+        }
     }
 
     public override void OnJoinedRoom()
     {
-        base.OnJoinedRoom();
-        Debug.Log("We are now in a room");
-
-        ClearPlayerListings();
-        ListPlayers();
-
-        photonPlayers = PhotonNetwork.PlayerList;
-        playersInRoom = photonPlayers.Length;
-        myNumberInRoom = playersInRoom;
     }
 
     private void ClearPlayerListings()
@@ -95,7 +85,6 @@ public class RoomNetworkManager : MonoBehaviourPunCallbacks, IInRoomCallbacks
 
     public void StartGame()
     {
-        isGameLoaded = true;
         if (!PhotonNetwork.IsMasterClient)
         {
             return;
@@ -121,22 +110,19 @@ public class RoomNetworkManager : MonoBehaviourPunCallbacks, IInRoomCallbacks
     public override void OnPlayerEnteredRoom(Player newPlayer)
     {
         base.OnPlayerEnteredRoom(newPlayer);
-        UpdatePlayersCount();
         Debug.Log(newPlayer.NickName + "has joined the room");
+        UpdatePlayersCount();
         ClearPlayerListings();
         ListPlayers();
-        photonPlayers = PhotonNetwork.PlayerList;
-        playersInRoom++;
     }
 
     public override void OnPlayerLeftRoom(Player otherPlayer)
     {
         base.OnPlayerLeftRoom(otherPlayer);
         Debug.Log(otherPlayer.NickName + "has left the game");
-        playersInRoom--;
+        UpdatePlayersCount();
         ClearPlayerListings();
         ListPlayers();
-        UpdatePlayersCount();
     }
 
     public void Leave()
@@ -148,6 +134,11 @@ public class RoomNetworkManager : MonoBehaviourPunCallbacks, IInRoomCallbacks
     {
         base.OnLeftRoom();
         Debug.Log("You left room");
-        UIManager.getInstance().Open("Menu");
+        PhotonNetwork.LoadLevel(0);
+    }
+
+    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
+        throw new System.NotImplementedException();
     }
 }

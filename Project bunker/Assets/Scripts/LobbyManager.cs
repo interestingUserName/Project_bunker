@@ -28,6 +28,14 @@ public class LobbyManager : MonoBehaviourPunCallbacks, ILobbyCallbacks
         OnRoomSizeChanged();
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            goButton.GetComponent<Button>().onClick.Invoke();
+        }
+    }
+
     public void RemoveRoomListings()
     {
         while (roomsPanel.childCount != 0)
@@ -110,7 +118,6 @@ public class LobbyManager : MonoBehaviourPunCallbacks, ILobbyCallbacks
     {
         base.OnCreatedRoom();
         Debug.Log("Room created. Name: " + PhotonNetwork.CurrentRoom.Name + "; Size: " + PhotonNetwork.CurrentRoom.MaxPlayers );
-        UIManager.getInstance().Open("Lobby");
     }
 
     public override void OnJoinRoomFailed(short returnCode, string message)
@@ -120,8 +127,10 @@ public class LobbyManager : MonoBehaviourPunCallbacks, ILobbyCallbacks
     public override void OnJoinedRoom()
     {
         base.OnJoinedRoom();
-        Debug.Log("You joined lobby");
-        UIManager.getInstance().Open("Lobby");
+        Debug.Log("We are now in a room");
+
+        UIManager.getInstance().CloseCurrentPanel();
+        PhotonNetwork.LoadLevel(1);
     }
 
     #endregion
