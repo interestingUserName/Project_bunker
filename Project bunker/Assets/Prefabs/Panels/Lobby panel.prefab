@@ -37,10 +37,10 @@ RectTransform:
   m_Father: {fileID: 2525949800041120803}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 334.08, y: -137.5}
+  m_SizeDelta: {x: 668.16, y: 55}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &55131748998149975
 CanvasRenderer:
@@ -192,6 +192,7 @@ GameObject:
   - component: {fileID: 6979104300254821330}
   - component: {fileID: 4720522078363247920}
   - component: {fileID: 3832193699392281728}
+  - component: {fileID: 3793473309353493927}
   m_Layer: 5
   m_Name: plusButton
   m_TagString: Untagged
@@ -299,17 +300,17 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6769268320801697518}
-        m_TargetAssemblyTypeName: PropertyValue, Assembly-CSharp
-        m_MethodName: Add
-        m_Mode: 6
+      - m_Target: {fileID: 1538796345422962944}
+        m_TargetAssemblyTypeName: SettingsControllerPointer, Assembly-CSharp
+        m_MethodName: UpdateUp
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 1
+          m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &3832193699392281728
 MonoBehaviour:
@@ -325,6 +326,62 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_AspectMode: 2
   m_AspectRatio: 1.7
+--- !u!114 &3793473309353493927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1087099775909303953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e38254c7a9ed5842b98e7f68c25cbb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1162918974868513695
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4847575425050039462}
+  - component: {fileID: 1538796345422962944}
+  m_Layer: 0
+  m_Name: SettingsControllerPointer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4847575425050039462
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1162918974868513695}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3859778349639616026}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1538796345422962944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1162918974868513695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65a4cf3b91876d94293257ba5275793f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controller: {fileID: 0}
 --- !u!1 &1370016898390805291
 GameObject:
   m_ObjectHideFlags: 0
@@ -440,6 +497,7 @@ GameObject:
   - component: {fileID: 5089108071509005251}
   - component: {fileID: 3408166995044770451}
   - component: {fileID: 8789762411267543119}
+  - component: {fileID: 5773167032439052725}
   m_Layer: 5
   m_Name: minusButton (5)
   m_TagString: Untagged
@@ -547,14 +605,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7180684669495180}
-        m_TargetAssemblyTypeName: PropertyValue, Assembly-CSharp
-        m_MethodName: Add
-        m_Mode: 6
+      - m_Target: {fileID: 1538796345422962944}
+        m_TargetAssemblyTypeName: SettingsControllerPointer, Assembly-CSharp
+        m_MethodName: UpdateDown
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 5
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -573,6 +631,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_AspectMode: 2
   m_AspectRatio: 1.7
+--- !u!114 &5773167032439052725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1550855640039940360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e38254c7a9ed5842b98e7f68c25cbb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2161415164371397110
 GameObject:
   m_ObjectHideFlags: 0
@@ -586,6 +656,7 @@ GameObject:
   - component: {fileID: 1925752164050958884}
   - component: {fileID: 4099899810701319617}
   - component: {fileID: 2675205853115040066}
+  - component: {fileID: 9025357757779664180}
   m_Layer: 5
   m_Name: plusButton (4)
   m_TagString: Untagged
@@ -693,17 +764,17 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1710554996034194959}
-        m_TargetAssemblyTypeName: PropertyValue, Assembly-CSharp
-        m_MethodName: Add
-        m_Mode: 6
+      - m_Target: {fileID: 1538796345422962944}
+        m_TargetAssemblyTypeName: SettingsControllerPointer, Assembly-CSharp
+        m_MethodName: UpdateUp
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 4
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 1
+          m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &2675205853115040066
 MonoBehaviour:
@@ -719,6 +790,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_AspectMode: 2
   m_AspectRatio: 1.7
+--- !u!114 &9025357757779664180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2161415164371397110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e38254c7a9ed5842b98e7f68c25cbb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2297013845266438046
 GameObject:
   m_ObjectHideFlags: 0
@@ -811,6 +894,7 @@ GameObject:
   - component: {fileID: 5392665949266962762}
   - component: {fileID: 2217214244107928822}
   - component: {fileID: 481650503643607145}
+  - component: {fileID: 716814038706382581}
   m_Layer: 5
   m_Name: minusButton (2)
   m_TagString: Untagged
@@ -918,14 +1002,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3572847624231142142}
-        m_TargetAssemblyTypeName: PropertyValue, Assembly-CSharp
-        m_MethodName: Add
-        m_Mode: 6
+      - m_Target: {fileID: 1538796345422962944}
+        m_TargetAssemblyTypeName: SettingsControllerPointer, Assembly-CSharp
+        m_MethodName: UpdateDown
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -944,6 +1028,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_AspectMode: 2
   m_AspectRatio: 1.7
+--- !u!114 &716814038706382581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2485641002191214874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e38254c7a9ed5842b98e7f68c25cbb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2642559764656694450
 GameObject:
   m_ObjectHideFlags: 0
@@ -1036,6 +1132,7 @@ GameObject:
   - component: {fileID: 6631620565094912438}
   - component: {fileID: 2338634306900053466}
   - component: {fileID: 1774211531489065854}
+  - component: {fileID: 1704203282759484996}
   m_Layer: 5
   m_Name: minusButton (4)
   m_TagString: Untagged
@@ -1143,14 +1240,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1710554996034194959}
-        m_TargetAssemblyTypeName: PropertyValue, Assembly-CSharp
-        m_MethodName: Add
-        m_Mode: 6
+      - m_Target: {fileID: 1538796345422962944}
+        m_TargetAssemblyTypeName: SettingsControllerPointer, Assembly-CSharp
+        m_MethodName: UpdateDown
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 4
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -1169,6 +1266,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_AspectMode: 2
   m_AspectRatio: 1.7
+--- !u!114 &1704203282759484996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2810460912810098546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e38254c7a9ed5842b98e7f68c25cbb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2939666675122271999
 GameObject:
   m_ObjectHideFlags: 0
@@ -1502,10 +1611,10 @@ RectTransform:
   m_Father: {fileID: 2525949800041120803}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 334.08, y: -192.5}
+  m_SizeDelta: {x: 668.16, y: 55}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3379877420268744013
 CanvasRenderer:
@@ -1806,6 +1915,7 @@ GameObject:
   - component: {fileID: 2427604716709982240}
   - component: {fileID: 6321052068175578458}
   - component: {fileID: 4774031123506622930}
+  - component: {fileID: 2813230006553333487}
   m_Layer: 5
   m_Name: minusButton (1)
   m_TagString: Untagged
@@ -1913,14 +2023,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5794197787841050790}
-        m_TargetAssemblyTypeName: PropertyValue, Assembly-CSharp
-        m_MethodName: Add
-        m_Mode: 6
+      - m_Target: {fileID: 1538796345422962944}
+        m_TargetAssemblyTypeName: SettingsControllerPointer, Assembly-CSharp
+        m_MethodName: UpdateDown
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -1939,6 +2049,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_AspectMode: 2
   m_AspectRatio: 1.7
+--- !u!114 &2813230006553333487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3723950506695218272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e38254c7a9ed5842b98e7f68c25cbb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3803888132834979071
 GameObject:
   m_ObjectHideFlags: 0
@@ -1976,10 +2098,10 @@ RectTransform:
   m_Father: {fileID: 2525949800041120803}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 334.08, y: -247.5}
+  m_SizeDelta: {x: 668.16, y: 55}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3093694116601436126
 CanvasRenderer:
@@ -2077,6 +2199,7 @@ RectTransform:
   - {fileID: 5174950974697700617}
   - {fileID: 7762842931136892872}
   - {fileID: 4946429929195198884}
+  - {fileID: 4847575425050039462}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2136,6 +2259,7 @@ GameObject:
   - component: {fileID: 3340272018084272079}
   - component: {fileID: 431344074885512003}
   - component: {fileID: 7329790810135079090}
+  - component: {fileID: 6720414747400442441}
   m_Layer: 5
   m_Name: plusButton (3)
   m_TagString: Untagged
@@ -2243,17 +2367,17 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2275596211192617582}
-        m_TargetAssemblyTypeName: PropertyValue, Assembly-CSharp
-        m_MethodName: Add
-        m_Mode: 6
+      - m_Target: {fileID: 1538796345422962944}
+        m_TargetAssemblyTypeName: SettingsControllerPointer, Assembly-CSharp
+        m_MethodName: UpdateUp
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 1
+          m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &7329790810135079090
 MonoBehaviour:
@@ -2269,6 +2393,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_AspectMode: 2
   m_AspectRatio: 1.7
+--- !u!114 &6720414747400442441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3936493075640038854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e38254c7a9ed5842b98e7f68c25cbb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4406959885000630332
 GameObject:
   m_ObjectHideFlags: 0
@@ -2385,10 +2521,10 @@ RectTransform:
   m_Father: {fileID: 2525949800041120803}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 334.08, y: -82.5}
+  m_SizeDelta: {x: 668.16, y: 55}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3669230286102992400
 CanvasRenderer:
@@ -2620,6 +2756,7 @@ GameObject:
   - component: {fileID: 4139579872650294421}
   - component: {fileID: 5812051244550546900}
   - component: {fileID: 2314331247377628683}
+  - component: {fileID: 3518031018705926354}
   m_Layer: 5
   m_Name: plusButton (1)
   m_TagString: Untagged
@@ -2727,17 +2864,17 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5794197787841050790}
-        m_TargetAssemblyTypeName: PropertyValue, Assembly-CSharp
-        m_MethodName: Add
-        m_Mode: 6
+      - m_Target: {fileID: 1538796345422962944}
+        m_TargetAssemblyTypeName: SettingsControllerPointer, Assembly-CSharp
+        m_MethodName: UpdateUp
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 1
+          m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &2314331247377628683
 MonoBehaviour:
@@ -2753,6 +2890,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_AspectMode: 2
   m_AspectRatio: 1.7
+--- !u!114 &3518031018705926354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4765514754232176677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e38254c7a9ed5842b98e7f68c25cbb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5118556703314174047
 GameObject:
   m_ObjectHideFlags: 0
@@ -2941,6 +3090,7 @@ GameObject:
   - component: {fileID: 3586109623299177990}
   - component: {fileID: 8243212490682954566}
   - component: {fileID: 1099061590669282387}
+  - component: {fileID: 7829289087928820780}
   m_Layer: 5
   m_Name: plusButton (5)
   m_TagString: Untagged
@@ -3048,17 +3198,17 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7180684669495180}
-        m_TargetAssemblyTypeName: PropertyValue, Assembly-CSharp
-        m_MethodName: Add
-        m_Mode: 6
+      - m_Target: {fileID: 1538796345422962944}
+        m_TargetAssemblyTypeName: SettingsControllerPointer, Assembly-CSharp
+        m_MethodName: UpdateUp
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 5
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 1
+          m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1099061590669282387
 MonoBehaviour:
@@ -3074,6 +3224,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_AspectMode: 2
   m_AspectRatio: 1.7
+--- !u!114 &7829289087928820780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5873866339052552617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e38254c7a9ed5842b98e7f68c25cbb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6071110519143188655
 GameObject:
   m_ObjectHideFlags: 0
@@ -3183,6 +3345,7 @@ GameObject:
   - component: {fileID: 4917960637727113133}
   - component: {fileID: 6188622505815372609}
   - component: {fileID: 137651567806121036}
+  - component: {fileID: 5491265310124498449}
   m_Layer: 5
   m_Name: minusButton
   m_TagString: Untagged
@@ -3290,10 +3453,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6769268320801697518}
-        m_TargetAssemblyTypeName: PropertyValue, Assembly-CSharp
-        m_MethodName: Add
-        m_Mode: 6
+      - m_Target: {fileID: 1538796345422962944}
+        m_TargetAssemblyTypeName: SettingsControllerPointer, Assembly-CSharp
+        m_MethodName: UpdateDown
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3316,6 +3479,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_AspectMode: 2
   m_AspectRatio: 1.7
+--- !u!114 &5491265310124498449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6110260510961135455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e38254c7a9ed5842b98e7f68c25cbb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6137049270676777541
 GameObject:
   m_ObjectHideFlags: 0
@@ -3353,10 +3528,10 @@ RectTransform:
   m_Father: {fileID: 2525949800041120803}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 334.08, y: -27.5}
+  m_SizeDelta: {x: 668.16, y: 55}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2731608245016217987
 CanvasRenderer:
@@ -3508,6 +3683,7 @@ GameObject:
   - component: {fileID: 3249655505144919806}
   - component: {fileID: 1314735391176551921}
   - component: {fileID: 3753670032391392607}
+  - component: {fileID: 2853556044058980627}
   m_Layer: 5
   m_Name: plusButton (2)
   m_TagString: Untagged
@@ -3615,17 +3791,17 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3572847624231142142}
-        m_TargetAssemblyTypeName: PropertyValue, Assembly-CSharp
-        m_MethodName: Add
-        m_Mode: 6
+      - m_Target: {fileID: 1538796345422962944}
+        m_TargetAssemblyTypeName: SettingsControllerPointer, Assembly-CSharp
+        m_MethodName: UpdateUp
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 1
+          m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &3753670032391392607
 MonoBehaviour:
@@ -3641,6 +3817,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_AspectMode: 2
   m_AspectRatio: 1.7
+--- !u!114 &2853556044058980627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6517086401704201975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e38254c7a9ed5842b98e7f68c25cbb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6660605987580422300
 GameObject:
   m_ObjectHideFlags: 0
@@ -3678,10 +3866,10 @@ RectTransform:
   m_Father: {fileID: 2525949800041120803}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 334.08, y: -302.5}
+  m_SizeDelta: {x: 668.16, y: 55}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2482901990250909742
 CanvasRenderer:
@@ -4121,6 +4309,7 @@ GameObject:
   - component: {fileID: 8227705476979858557}
   - component: {fileID: 8881189699312941812}
   - component: {fileID: 266860564089351681}
+  - component: {fileID: 7797749291992466455}
   m_Layer: 5
   m_Name: minusButton (3)
   m_TagString: Untagged
@@ -4228,14 +4417,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2275596211192617582}
-        m_TargetAssemblyTypeName: PropertyValue, Assembly-CSharp
-        m_MethodName: Add
-        m_Mode: 6
+      - m_Target: {fileID: 1538796345422962944}
+        m_TargetAssemblyTypeName: SettingsControllerPointer, Assembly-CSharp
+        m_MethodName: UpdateDown
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -4254,6 +4443,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_AspectMode: 2
   m_AspectRatio: 1.7
+--- !u!114 &7797749291992466455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8132979593469456616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e38254c7a9ed5842b98e7f68c25cbb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8287625933403504442
 GameObject:
   m_ObjectHideFlags: 0
@@ -4459,9 +4660,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   roomNameText: {fileID: 6210467303976705562}
   playersCountText: {fileID: 1362315528055006888}
+  PV: {fileID: 0}
   playersPanel: {fileID: 364307678358518715}
   playerListingPrefab: {fileID: 1498107932474977222, guid: 429372a341fa9484db10513143994df5, type: 3}
   startButton: {fileID: 0}
+  readyController: {fileID: 0}
 --- !u!114 &5675852758383143821
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4477,8 +4680,8 @@ MonoBehaviour:
   ObservedComponentsFoldoutOpen: 1
   Group: 0
   prefixField: -1
-  observableSearch: 2
-  Synchronization: 3
+  observableSearch: 0
+  Synchronization: 1
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 8210614568610922607}

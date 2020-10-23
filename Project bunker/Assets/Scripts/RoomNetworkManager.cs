@@ -1,5 +1,6 @@
 ﻿using Photon.Pun;
 using Photon.Realtime;
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -9,15 +10,14 @@ public class RoomNetworkManager : MonoBehaviourPunCallbacks, IInRoomCallbacks, I
     public Text roomNameText;
     public Text playersCountText;
 
-    private PhotonView PV;
+    public PhotonView PV;
 
     public static RoomNetworkManager room;
-
-    private bool isReady = false;
 
     public Transform playersPanel;
     public GameObject playerListingPrefab;
     public GameObject startButton;
+    public ReadyController readyController;
 
     private void Awake()
     {
@@ -39,23 +39,16 @@ public class RoomNetworkManager : MonoBehaviourPunCallbacks, IInRoomCallbacks, I
     {
         playersPanel = GameObject.Find("Players panel").transform;
         PV = GetComponent<PhotonView>();
+        PhotonNetwork.Instantiate("ReadyController", new Vector3(0, 0, 0), Quaternion.identity);
+        PhotonNetwork.Instantiate("SettingsController", new Vector3(0, 0, 0), Quaternion.identity);
         ClearPlayerListings();
         ListPlayers();
+        SetRoomName();
+        UpdatePlayersCount();
     }
 
     private void Update()
     {
-        if (PhotonNetwork.IsMasterClient && Input.GetKeyDown(KeyCode.Space))
-        {
-            if (isReady)
-            {
-                isReady = false;
-            }
-            else
-            {
-                isReady = true;
-            }
-        }
     }
 
     public override void OnJoinedRoom()
@@ -68,6 +61,10 @@ public class RoomNetworkManager : MonoBehaviourPunCallbacks, IInRoomCallbacks, I
         {
             Destroy(playersPanel.GetChild(i).gameObject);
         }
+        if (readyController != null)
+        {
+            readyController.isReadyList.Clear();
+        }
     }
 
     private void ListPlayers()
@@ -77,8 +74,13 @@ public class RoomNetworkManager : MonoBehaviourPunCallbacks, IInRoomCallbacks, I
             foreach(Player player in PhotonNetwork.PlayerList)
             {
                 GameObject tempListing = Instantiate(playerListingPrefab, playersPanel);
+                tempListing.GetComponent<ActorNumber>().actorNumber = player.ActorNumber;
                 Text tempText = tempListing.transform.GetChild(0).GetComponent<Text>();
                 tempText.text = player.NickName;
+                if (readyController != null)
+                {
+                    readyController.isReadyList.Add(player.ActorNumber, false);
+                }
             }
         }
     }

@@ -39,6 +39,12 @@ MonoBehaviour:
   - Fire
   - RespawnSpaceship
   - SpawnMe
+  - RPC_UpdateIsReady
+  - UpdateSetting
+  - UpdateSettingDown
+  - UpdateSettingUp
+  - RPC_UpdateSettingDown
+  - RPC_UpdateSettingUp
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1

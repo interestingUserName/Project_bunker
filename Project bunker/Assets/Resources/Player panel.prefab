@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3543641933480599375}
   - component: {fileID: 1819648574233460048}
   - component: {fileID: 3794188367871836658}
+  - component: {fileID: 8126109022768176416}
   m_Layer: 5
   m_Name: Player panel
   m_TagString: Untagged
@@ -138,6 +139,19 @@ MonoBehaviour:
   m_SynchronizePosition: 1
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 1
+--- !u!114 &8126109022768176416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1498107932474977222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4aca7c5b0aa4c534db402a86edcca33e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actorNumber: -1
 --- !u!1 &3772514846599318246
 GameObject:
   m_ObjectHideFlags: 0
@@ -155,7 +169,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7614415366750529070
 RectTransform:
   m_ObjectHideFlags: 0
