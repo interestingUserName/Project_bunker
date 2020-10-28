@@ -51,6 +51,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PV: {fileID: 0}
   isReady: 0
+  readyText: {fileID: 0}
+  startButton: {fileID: 0}
 --- !u!114 &1185328356586604231
 MonoBehaviour:
   m_ObjectHideFlags: 0

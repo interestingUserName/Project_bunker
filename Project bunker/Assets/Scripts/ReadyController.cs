@@ -1,13 +1,16 @@
 ﻿using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ReadyController : MonoBehaviour, IPunObservable
 {
-    public Dictionary<int, bool> isReadyList = new Dictionary<int, bool>();
     public PhotonView PV;
     public bool isReady = false;
+    public Text readyText;
+    public GameObject startButton;
 
     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
     {
@@ -19,7 +22,14 @@ public class ReadyController : MonoBehaviour, IPunObservable
     {
         PV = GetComponent<PhotonView>();
         GameObject.Find("Room network manager").GetComponent<RoomNetworkManager>().readyController = this;
-        
+        readyText = GameObject.Find("ReadyText").GetComponent<Text>();
+        startButton = GameObject.Find("StartButton");
+
+        if (PV.IsMine)
+        {
+            startButton.SetActive(false);
+        }
+
     }
 
     // Update is called once per frame
@@ -30,12 +40,41 @@ public class ReadyController : MonoBehaviour, IPunObservable
             if (isReady)
             {
                 isReady = false;
+                readyText.text = "space - ready";
             }
             else
             {
                 isReady = true;
+                readyText.text = "space - not ready";
             }
             PV.RPC("RPC_UpdateIsReady", RpcTarget.AllBuffered, PhotonNetwork.LocalPlayer.ActorNumber, isReady);
+        }
+        AllReadyCheck();
+    }
+
+    public void AllReadyCheck()
+    {
+        if (!PhotonNetwork.IsMasterClient || !PV.IsMine)
+        {
+            return;
+        }
+
+        bool allReady = true;
+        GameObject playersPanel = GameObject.Find("Players panel");
+        for (int i = 0; i < playersPanel.transform.childCount; i++)
+        {
+            if (!playersPanel.transform.GetChild(i).GetChild(1).gameObject.activeSelf)
+            {
+                allReady = false;
+            }
+        }
+        if (allReady)
+        {
+            startButton.SetActive(true);
+        }
+        else
+        {
+            startButton.SetActive(false);
         }
     }
 
@@ -43,8 +82,6 @@ public class ReadyController : MonoBehaviour, IPunObservable
     void RPC_UpdateIsReady(int actorNumber, bool _isReady)
     {
         Debug.Log(actorNumber.ToString() + " is " + _isReady.ToString());
-        isReadyList.Remove(actorNumber);
-        isReadyList.Add(actorNumber, _isReady);
         GameObject playersPanel = GameObject.Find("Players panel");
         for (int i = 0; i < playersPanel.transform.childCount; i++)
         {
@@ -62,3 +99,4 @@ public class ReadyController : MonoBehaviour, IPunObservable
         }
     }
 }
+    

@@ -61,10 +61,6 @@ public class RoomNetworkManager : MonoBehaviourPunCallbacks, IInRoomCallbacks, I
         {
             Destroy(playersPanel.GetChild(i).gameObject);
         }
-        if (readyController != null)
-        {
-            readyController.isReadyList.Clear();
-        }
     }
 
     private void ListPlayers()
@@ -77,10 +73,6 @@ public class RoomNetworkManager : MonoBehaviourPunCallbacks, IInRoomCallbacks, I
                 tempListing.GetComponent<ActorNumber>().actorNumber = player.ActorNumber;
                 Text tempText = tempListing.transform.GetChild(0).GetComponent<Text>();
                 tempText.text = player.NickName;
-                if (readyController != null)
-                {
-                    readyController.isReadyList.Add(player.ActorNumber, false);
-                }
             }
         }
     }
@@ -101,12 +93,12 @@ public class RoomNetworkManager : MonoBehaviourPunCallbacks, IInRoomCallbacks, I
 
     public void SetRoomName()
     {
-        roomNameText.text = PhotonNetwork.CurrentRoom.Name;
+        roomNameText.text = "room: " + PhotonNetwork.CurrentRoom.Name;
     }
 
     public void UpdatePlayersCount()
     {
-        playersCountText.text = (PhotonNetwork.CurrentRoom.PlayerCount + "/" + PhotonNetwork.CurrentRoom.MaxPlayers);
+        playersCountText.text = ("players: " + PhotonNetwork.CurrentRoom.PlayerCount + "/" + PhotonNetwork.CurrentRoom.MaxPlayers);
     }
 
     public override void OnPlayerEnteredRoom(Player newPlayer)

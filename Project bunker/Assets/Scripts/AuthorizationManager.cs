@@ -33,7 +33,7 @@ public class AuthorizationManager : MonoBehaviourPunCallbacks
 
     public void OnNameInputChanged()
     {
-        if (nameInputField.text.Length > 16)
+        if (nameInputField.text.Length > 20)
         {
             nameInputField.text = nameInputField.text.Substring(0, nameInputField.text.Length - 1);
         }
