@@ -45,6 +45,11 @@ MonoBehaviour:
   - UpdateSettingUp
   - RPC_UpdateSettingDown
   - RPC_UpdateSettingUp
+  - RPC_StartGame
+  - RPC_UpdateSettings
+  - RPC_ShowApocalyplseInfo
+  - RPC_SetApocalyplseInfo
+  - RPC_SetBunkerInfo
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1

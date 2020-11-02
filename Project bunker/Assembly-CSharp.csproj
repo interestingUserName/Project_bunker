@@ -55,6 +55,8 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\MasterGameManager.cs" />
+    <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Imphenzia\GradientSky\Scripts\GradientSkyCamera.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\DemoChat\ChatGui.cs" />
     <Compile Include="Assets\Scripts\AuthorizationManager.cs" />
@@ -70,6 +72,8 @@
     <Compile Include="Assets\Photon\PhotonChat\Demos\DemoChat\ChannelSelector.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\DemoChat\IgnoreUiRaycastWhenInactive.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\DemoChat\ChatAppIdCheckerUI.cs" />
+    <Compile Include="Assets\Scripts\ChildChecker.cs" />
+    <Compile Include="Assets\Scripts\GameManagerSpawner.cs" />
     <Compile Include="Assets\Scripts\UI\RoomButton.cs" />
     <Compile Include="Assets\Scripts\UI\ButtonHighlighting.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\DemoChat\AppSettingsExtensions.cs" />
@@ -82,10 +86,16 @@
     <Compile Include="Assets\Scripts\ActorNumber.cs" />
     <Compile Include="Assets\Scripts\SettingsController.cs" />
     <Compile Include="Assets\Scripts\MasterChecker.cs" />
+    <Compile Include="Assets\Scripts\Info\Apocalypse.cs" />
+    <Compile Include="Assets\Scripts\InfoStorage.cs" />
     <Compile Include="Assets\Scripts\UI\PropertyValue.cs" />
+    <Compile Include="Assets\Scripts\GameSettings.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\Common\OnStartDelete.cs" />
     <Compile Include="Assets\Scripts\LobbyManager.cs" />
-    <Compile Include="Assets\Scripts\ChildChecker.cs" />
+    <Compile Include="Assets\Scripts\Info\BunkerDescription.cs" />
+    <Compile Include="Assets\Scripts\Info\BunkerEquipment.cs" />
+    <Compile Include="Assets\Scripts\Info\BunkerStuff.cs" />
+    <Compile Include="Assets\Scripts\Info\BunkerResidents.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\Photon\PhotonLibs\netstandard2.0\Photon3Unity3D.xml" />

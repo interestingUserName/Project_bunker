@@ -131,8 +131,22 @@ public class RoomNetworkManager : MonoBehaviourPunCallbacks, IInRoomCallbacks, I
         PhotonNetwork.LoadLevel(0);
     }
 
+    public void OnStartButtonClicked()
+    {
+        PV.RPC("RPC_StartGame", RpcTarget.AllBuffered);
+    }
+
+    [PunRPC]
+    void RPC_StartGame()
+    {
+        Debug.Log("Game started");
+
+        DontDestroyOnLoad(GameObject.Find("GameSettings"));
+        PhotonNetwork.LoadLevel(2);
+    }
+
     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
     {
-        throw new System.NotImplementedException();
+        
     }
 }

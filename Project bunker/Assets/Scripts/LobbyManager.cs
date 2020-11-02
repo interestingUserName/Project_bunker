@@ -129,7 +129,6 @@ public class LobbyManager : MonoBehaviourPunCallbacks, ILobbyCallbacks
         base.OnJoinedRoom();
         Debug.Log("We are now in a room");
 
-        UIManager.getInstance().CloseCurrentPanel();
         PhotonNetwork.LoadLevel(1);
     }
 

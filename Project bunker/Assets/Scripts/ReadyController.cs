@@ -1,11 +1,12 @@
 ﻿using Photon.Pun;
+using Photon.Realtime;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ReadyController : MonoBehaviour, IPunObservable
+public class ReadyController : MonoBehaviourPunCallbacks, IPunObservable
 {
     public PhotonView PV;
     public bool isReady = false;
@@ -29,6 +30,8 @@ public class ReadyController : MonoBehaviour, IPunObservable
         {
             startButton.SetActive(false);
         }
+
+        PV.RPC("RPC_UpdateIsReady", RpcTarget.AllBuffered, PhotonNetwork.LocalPlayer.ActorNumber, isReady);
 
     }
 
@@ -97,6 +100,12 @@ public class ReadyController : MonoBehaviour, IPunObservable
                 }
             }
         }
+    }
+
+    public override void OnPlayerEnteredRoom(Player newPlayer)
+    {
+        isReady = false;
+        readyText.text = "space - ready";
     }
 }
     
