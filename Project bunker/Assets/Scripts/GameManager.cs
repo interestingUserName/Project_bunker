@@ -34,6 +34,8 @@ public class GameManager : MonoBehaviour
         apocalypseNameText = GameObject.Find("ApocalypseInfoPanel").transform.GetChild(0).gameObject.GetComponent<Text>();
         apocalypseDescriptionText = GameObject.Find("ApocalypseInfoPanel").transform.GetChild(1).gameObject.GetComponent<Text>();
         bunkerDescriptionText = GameObject.Find("ApocalypseInfoPanel").transform.GetChild(3).gameObject.GetComponent<Text>();
+        GameObject.Find("ApocalypseInfoPanel").transform.GetChild(2).gameObject.SetActive(true);
+        GameObject.Find("ApocalypseInfoPanel").SetActive(false);
         if (PhotonNetwork.IsMasterClient)
         {
             InitializeApocalypseInfo();

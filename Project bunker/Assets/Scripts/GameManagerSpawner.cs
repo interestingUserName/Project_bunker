@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class GameManagerSpawner : MonoBehaviour
 {
+    public GameObject infoButton1;
+    public GameObject infoButton2;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,6 +19,13 @@ public class GameManagerSpawner : MonoBehaviour
 
     void SpawnGameManager()
     {
+        ShowInfoButtons();
         PhotonNetwork.Instantiate("GameManager", new Vector3(0, 0, 0), Quaternion.identity);
+    }
+
+    void ShowInfoButtons()
+    {
+        infoButton1.SetActive(true);
+        infoButton2.SetActive(true);
     }
 }

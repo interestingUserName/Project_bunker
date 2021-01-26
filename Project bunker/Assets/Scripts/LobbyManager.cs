@@ -9,14 +9,12 @@ public class LobbyManager : MonoBehaviourPunCallbacks, ILobbyCallbacks
     public static LobbyManager lobbyManager;
 
     public InputField roomNameInputField;
-    public Slider roomSizeSlider;
     public GameObject goButton;
 
     public GameObject roomListingPrefab;
     public Transform roomsPanel;
 
     private string roomName;
-    private int roomSize;
 
     private void Awake()
     {
@@ -25,7 +23,6 @@ public class LobbyManager : MonoBehaviourPunCallbacks, ILobbyCallbacks
 
     private void Start()
     {
-        OnRoomSizeChanged();
     }
 
     private void Update()
@@ -51,7 +48,7 @@ public class LobbyManager : MonoBehaviourPunCallbacks, ILobbyCallbacks
             GameObject tempListing = Instantiate(roomListingPrefab, roomsPanel);
             RoomButton tempButton = tempListing.GetComponent<RoomButton>();
             tempButton.roomName = room.Name;
-            tempButton.roomSize = room.MaxPlayers;
+            tempButton.roomSize = room.PlayerCount;
             tempButton.SetRoom();
         }
     }
@@ -60,7 +57,7 @@ public class LobbyManager : MonoBehaviourPunCallbacks, ILobbyCallbacks
     {
         Debug.Log("Trying to create a new room");
 
-        RoomOptions roomOps = new RoomOptions() { IsVisible = true, IsOpen = true, MaxPlayers = (byte)roomSize };
+        RoomOptions roomOps = new RoomOptions() { IsVisible = true, IsOpen = true, MaxPlayers = 16 };
         PhotonNetwork.CreateRoom(roomName, roomOps);
     }
 
@@ -82,11 +79,6 @@ public class LobbyManager : MonoBehaviourPunCallbacks, ILobbyCallbacks
             goButton.SetActive(false);
         }
         roomName = nameIn;
-    }
-
-    public void OnRoomSizeChanged()
-    {
-        roomSize = (int)roomSizeSlider.value;
     }
 
     public void JoinLobbyOnClick()
